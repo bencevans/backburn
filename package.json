@@ -25,6 +25,7 @@
   "homepage": "https://github.com/bencevans/backburn#readme",
   "dependencies": {
     "backblaze-b2": "^1.0.4",
-    "chalk": "^2.3.2"
+    "chalk": "^2.3.2",
+    "morgan": "^1.9.0"
   }
 }
