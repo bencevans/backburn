@@ -9,7 +9,7 @@ const { createProxy } = require('./proxy')
 console.log(chalk.red(fs.readFileSync(path.resolve(__dirname, 'motd.txt'), 'utf8')))
 
 const handleError = err => {
-  console.error('Error: ' + err.message)
+  console.error(' Error: ' + err.message + '\n')
   process.exit(1)
 }
 process.on('uncaughtException', handleError)
