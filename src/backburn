@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+const B2 = require('backblaze-b2')
+const { createProxy } = require('./proxy')
+
+const handleError = err => {
+  console.error(err.message)
+  process.exit(1)
+}
+process.on('uncaughtException', handleError)
+
+const port = process.env.PORT || 3000
+const accountId = process.env.B2_ID
+const applicationKey = process.env.B2_KEY
+const bucketName = process.env.B2_BUCKET
+
+if (!accountId) {
+  throw new Error('Missing B2_ID environment variable.')
+}
+
+if (!applicationKey) {
+  throw new Error('Missing B2_KEY environment variable.')
+}
+
+if (!bucketName) {
+  throw new Error('Missing B2_BUCKET environment variable.')
+}
+
+const b2 = new B2({
+  accountId: accountId,
+  applicationKey: applicationKey
+})
+
+b2.authorize()
+  .then(() => {
+    const serv = createProxy(b2, bucketName)
+
+    serv.listen(port, () => {
+      console.log('HTTP Server - :' + port)
+    })
+  })
+  .catch(() => {
+    handleError(new Error('Invalid B2_ID / B2_KEY.'))
+  })

@@ -1,0 +1,29 @@
+{
+  "name": "backburn",
+  "version": "0.0.0",
+  "description": "Backblaze B2 Proxy",
+  "main": "src/backburn",
+  "scripts": {
+    "start": "./src/backburn",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bencevans/backburn.git"
+  },
+  "keywords": [
+    "backblaze",
+    "b2",
+    "http",
+    "proxy"
+  ],
+  "author": "Ben Evans <ben@bluechimp.io> (https://bencevans.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bencevans/backburn/issues"
+  },
+  "homepage": "https://github.com/bencevans/backburn#readme",
+  "dependencies": {
+    "backblaze-b2": "^1.0.4"
+  }
+}
