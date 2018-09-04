@@ -1,4 +1,4 @@
-FROM node:carbon-alpine@sha256:d3ecde67a30db99d10a32173cc2fee8766bb42430feb2f819179c8dcf494dac1
+FROM node:carbon-alpine@sha256:338284233a8707f540938d05ab94cd68d9ce8a2adb100beb6728f901d59c274d
 
 WORKDIR /usr/src/app
 
